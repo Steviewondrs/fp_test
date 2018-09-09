@@ -3,8 +3,8 @@ export const state = {
 }
 
 export const mutations = {
-    PERSON_LIST_READ_SUCCESS( state, list) {
-        state.personsList = list;
+    PERSON_LIST_READ_SUCCESS( state, result) {
+        state.personsList = result.data;
     },
 
     API_ERROR(state, error) {

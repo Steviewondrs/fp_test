@@ -42,6 +42,8 @@ body {
 	
 	font-family: Roboto, Arial, Helvetica, sans-serif;
 	color: $grey--dark;
+
+	background: beige;
 }
 
 .container {
@@ -58,7 +60,10 @@ body {
 // Containers etc.
 // ---------------
 .box {
-    background: white;
+	background: white;
+	border-radius: 6px;
+	box-shadow: 5px 10px $grey--dark;
+
     & + & {
         margin-top: 30px;
     }
@@ -75,7 +80,7 @@ body {
 
     border: 2px solid $grey--dark;
     border-top: none;
-    border-radius: 0 0 5px;
+    border-radius: 0 0 5px 5px;
 }
 
 
@@ -103,6 +108,39 @@ body {
     }
 }
 
+.list {
+	@include reset(list);
+}
+
+.list-item {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	
+	& + & {
+		border-top: 1px solid $grey--dark;
+		padding-top: 15px;
+		margin-top: 15px;
+	}
+}
+
+.link {
+	color: $grey;
+	text-decoration: none;
+
+	&:hover {
+		color: $blue;
+		text-decoration: none;
+	}
+}
+// ---------------
+// Componengts - planner
+// ---------------
+.persons-list__link {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
 
 // ---------------
 // Componengts - planner
@@ -202,5 +240,11 @@ body {
 		font-size: .7rem;
 		
 		color: white;
+	}
+}
+
+.hide--md {
+	@media (max-width: $media--max-md) {
+		display: none;
 	}
 }

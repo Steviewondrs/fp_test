@@ -14,7 +14,7 @@ export default new Router({
         },
         {
             path: '/person/:id',
-            name: 'details',
+            name: 'person',
             component: Detail,
         }
         // {
