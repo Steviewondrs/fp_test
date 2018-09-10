@@ -1,7 +1,7 @@
 export const state = {
     personsList: [],
     selectedPerson: {
-        name: "test"
+        name: ""
     }
 }
 

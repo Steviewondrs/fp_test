@@ -1,5 +1,6 @@
 <template lang="pug">
     .container
+        router-link(to="/") Back to Persons
         PersonalInfo
         Itinerary
 </template>
