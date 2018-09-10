@@ -1,5 +1,5 @@
 <template lang="pug">
-    .container
+    .container(v-if="person")
         h1 {{ person.employee.name }}
         .box
             .box__header
@@ -34,13 +34,19 @@ export default {
         person: state => state.selectedPerson
     }),
     methods: {
-        readPersonDetails() {
-            const id = this.$route.params.id;
+        readPersonDetails(id) {
             this.$store.dispatch( 'readPersonDetails', id);
         },
     },
-    mounted() {
-        this.readPersonDetails();
+    // watch: {
+    //     '$route.params.id': function(id) {
+    //         debugger
+    //         this.readPersonDetails(id);
+    //     }
+    // },
+    created() {
+        const id = this.$route.params.id;
+        this.readPersonDetails(id);
     }
 }
 </script>

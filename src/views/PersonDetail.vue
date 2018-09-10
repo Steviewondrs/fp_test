@@ -1,6 +1,7 @@
 <template lang="pug">
     .container
-        router-link(to="/") Back to Persons
+        router-link.link(to="/") 
+            h4 Back to Persons
         PersonalInfo
         Itinerary
 </template>
@@ -11,7 +12,7 @@ import PersonalInfo from '@/components/PersonalInfo.vue';
 import Itinerary from '@/components/Itinerary.vue';
 
 export default {
-    name: 'details',
+    name: 'personDetails',
     components: {
         PersonalInfo,
         Itinerary
