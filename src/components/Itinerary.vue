@@ -31,7 +31,7 @@
                     li.planner-list-item
                         .planner-item
                         .planner-item
-                            h4 Grand total 2h
+                            h4 Grand total 3h
                         
 </template>
 
