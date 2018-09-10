@@ -1,4 +1,4 @@
-import { 
+import {
     fetchPersonList,
     fetchPersonDetails,
     fetchPersonItinerary
@@ -9,9 +9,9 @@ export const readPersonsList = async ({ commit }) => {
         const list = await fetchPersonList();
         commit('PERSON_LIST_READ_SUCCESS', list);
     } catch (err) {
-        commit('API_ERROR', err );
+        commit('API_ERROR', err);
     }
-}
+};
 
 export const readPersonDetails = async ({ commit, dispatch }, id) => {
     try {
@@ -21,7 +21,7 @@ export const readPersonDetails = async ({ commit, dispatch }, id) => {
     } catch (err) {
         commit('API_ERROR', err);
     }
-}
+};
 
 export const readPersonItinerary = async ({ commit }, person) => {
     try {
@@ -30,4 +30,4 @@ export const readPersonItinerary = async ({ commit }, person) => {
     } catch (err) {
         commit('API_ERROR', err);
     }
-}
+};

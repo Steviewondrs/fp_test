@@ -10,6 +10,6 @@ export default {
     name: 'home',
     components: {
         PersonsList
-    },
+    }
 };
 </script>

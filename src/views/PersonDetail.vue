@@ -1,6 +1,6 @@
 <template lang="pug">
     .container
-        router-link.link(to="/") 
+        router-link.link(to="/")
             h4 Back to Persons
         PersonalInfo
         Itinerary
@@ -16,6 +16,6 @@ export default {
     components: {
         PersonalInfo,
         Itinerary
-    },
+    }
 };
 </script>

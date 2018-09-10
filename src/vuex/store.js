@@ -5,23 +5,22 @@ export const state = {
             name: ''
         }
     }
-}
+};
 
 export const mutations = {
-    PERSON_LIST_READ_SUCCESS( state, result) {
+    PERSON_LIST_READ_SUCCESS (state, result) {
         state.personsList = result.data;
     },
 
-    PERSON_DETAILS_READ_SUCCESS( state, result) {
+    PERSON_DETAILS_READ_SUCCESS (state, result) {
         state.selectedPerson = result;
     },
 
-    PERSON_ITINERARY_READ_SUCCESS( state, result) {
+    PERSON_ITINERARY_READ_SUCCESS (state, result) {
         state.itinerary = result; // TODO:
     },
 
-    API_ERROR(state, error) {
+    API_ERROR (state, error) {
         console.log(error);
     }
-
 };

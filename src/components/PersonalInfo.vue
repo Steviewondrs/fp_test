@@ -34,18 +34,19 @@ export default {
         person: state => state.selectedPerson
     }),
     methods: {
-        readPersonDetails(id) {
-            this.$store.dispatch( 'readPersonDetails', id);
-        },
+        readPersonDetails (id) {
+            this.$store.dispatch('readPersonDetails', id);
+        }
     },
     watch: {
         $route: (from, to) => {
+            const id = this.$route.params.id;
             this.readPersonDetails(id);
         }
     },
-    created() {
+    created () {
         const id = this.$route.params.id;
         this.readPersonDetails(id);
     }
-}
+};
 </script>

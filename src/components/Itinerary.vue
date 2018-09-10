@@ -2,7 +2,7 @@
     .container
         .box
             .box__header
-                h3 Itinerary 
+                h3 Itinerary
             .box__content
                 ul.planner-list
                     li.planner-list-item
@@ -32,11 +32,10 @@
                         .planner-item
                         .planner-item
                             h4 Grand total 3h
-                        
 </template>
 
 <script>
 export default {
-    
-}
+    // TODO: itinerary
+};
 </script>

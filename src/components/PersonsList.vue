@@ -10,7 +10,6 @@
                             h4 {{ person.name }}
                             h5.hide--md {{ person.email }}
 
-
 </template>
 
 <script>
@@ -20,11 +19,11 @@ export default {
         list: state => state.personsList
     }),
     methods: {
-        readPersonList() {
-            this.$store.dispatch( 'readPersonsList' );
+        readPersonList () {
+            this.$store.dispatch('readPersonsList');
         }
     },
-    mounted() {
+    mounted () {
         this.readPersonList();
     }
 };
