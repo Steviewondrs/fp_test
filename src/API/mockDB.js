@@ -69,7 +69,7 @@ export function getPersonList() {
 
 export function getPersonDetail(id) {
     switch (id) {
-        case '8026':
+        case 8026:
              return {
                 "employee":{
                    "id":8026,
@@ -174,7 +174,7 @@ export function getPersonDetail(id) {
                 }
              }
 
-         case '8023': 
+         case 8023: 
              return {
                 "employee":{
                    "id":8023,
@@ -278,7 +278,7 @@ export function getPersonDetail(id) {
                    "days_since_termination":null
                 }
              };
-         case '8025':
+         case 8025:
              return {
                 "employee":{
                    "id":8025,
@@ -382,7 +382,7 @@ export function getPersonDetail(id) {
                    "days_since_termination":null
                 }
              };
-         case '8027':
+         case 8027:
              return {
                 "employee":{
                    "id":8027,
@@ -486,7 +486,7 @@ export function getPersonDetail(id) {
                    "days_since_termination":null
                 }
              };
-         case '8028':
+         case 8028:
              return {
                 "employee":{
                    "id":8028,

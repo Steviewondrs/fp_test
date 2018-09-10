@@ -38,12 +38,11 @@ export default {
             this.$store.dispatch( 'readPersonDetails', id);
         },
     },
-    // watch: {
-    //     '$route.params.id': function(id) {
-    //         debugger
-    //         this.readPersonDetails(id);
-    //     }
-    // },
+    watch: {
+        $route: (from, to) => {
+            this.readPersonDetails(id);
+        }
+    },
     created() {
         const id = this.$route.params.id;
         this.readPersonDetails(id);
