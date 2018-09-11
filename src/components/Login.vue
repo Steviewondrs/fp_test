@@ -1,7 +1,7 @@
 <template lang="pug">
     .container
         .box
-            .box-header
+            .box__header
                 h3 Authenticate yourself
             .box__content
                 form(@submit.prevent="login")

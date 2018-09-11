@@ -17,9 +17,12 @@ export function fetchToken (code) {
     });
 }
 
-export function fetchPersonList () {
-    let data = mockDB.getPersonList();
-    return mockCall(data);
+export function fetchPersonList (token) {
+    const url = '/officient/people/list?page=0';
+    return myFetch(url, {
+        method: 'GET',
+        credentials: 'include'
+    }, token);
 }
 
 export function fetchPersonDetails (id) {

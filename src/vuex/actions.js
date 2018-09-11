@@ -5,9 +5,10 @@ import {
     fetchPersonItinerary
 } from '../API/officient.js';
 
-export const readPersonsList = async ({ commit }) => {
+export const readPersonsList = async ({ commit, state }) => {
     try {
-        const list = await fetchPersonList();
+        const token = state.token;
+        const list = await fetchPersonList(token);
         commit('PERSON_LIST_READ_SUCCESS', list);
     } catch (err) {
         commit('API_ERROR', err);
@@ -36,8 +37,8 @@ export const readPersonItinerary = async ({ commit }, person) => {
 export const readToken = async ({ commit }, code) => {
     try {
         const token = await fetchToken(code);
-        localStorage.setItem('user-token', token);
-        commit('TOKEN_READ_SUCCESS', token);
+        localStorage.setItem('user-token', token.access_token);
+        commit('TOKEN_READ_SUCCESS', token.access_token);
     } catch (err) {
         commit('API_ERROR', err);
     }
