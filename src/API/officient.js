@@ -1,10 +1,20 @@
-// import axios from 'axios';
 import querystring from 'querystring';
 import * as mockDB from './mockDB';
-// import { debug } from 'util';
+import { myFetch } from './API';
 
-export function readAccessToken () {
-    // TODO: get access token from officient API
+export function fetchToken (code) {
+    const form = new FormData();
+    form.append('code', code);
+    form.append('client_id', '504616');
+    form.append('client_secret', 'GBaZt4p3YXVCXKbbeRbiImrZh5TlRG6TuJZF0frBEqlYp5wXgI');
+    form.append('grant_type', 'authorization_code');
+
+    var url = '/officient/token?';
+    return myFetch(url, {
+        method: 'POST',
+        credentials: 'include',
+        body: form
+    });
 }
 
 export function fetchPersonList () {
@@ -19,32 +29,6 @@ export function fetchPersonDetails (id) {
 
 export function fetchPersonItinerary (person) {
     // TODO: something here
-}
-
-export function fetchPersonItineraryTEST (person) {
-    let date = new Date();
-    let formattedDate = formatDate(date);
-    const params = querystring.stringify({
-        from: 'http://irail.be/stations/NMBS/008814001',
-        to: 'http://irail.be/stations/NMBS/008821006',
-        date: formattedDate,
-        time: '1200',
-        timeSel: 'depart'
-    });
-    let url = 'https://api.irail.be?' + params;
-
-    return fetch(url, {
-        method: 'GET',
-        mode: 'cors',
-        headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-            'cache-control': 'Public',
-            'etag': 'e5e7c8ae25bb71cdfce80412c2b1be54'
-        }
-    })
-        .then(result => {})
-        .catch(err => { console.log(err); });
 }
 
 function mockCall (data) {

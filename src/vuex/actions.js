@@ -1,4 +1,5 @@
 import {
+    fetchToken,
     fetchPersonList,
     fetchPersonDetails,
     fetchPersonItinerary
@@ -27,6 +28,16 @@ export const readPersonItinerary = async ({ commit }, person) => {
     try {
         const itinerary = await fetchPersonItinerary(person);
         commit('PERSON_ITINERARY_READ_SUCCESS', itinerary);
+    } catch (err) {
+        commit('API_ERROR', err);
+    }
+};
+
+export const readToken = async ({ commit }, code) => {
+    try {
+        const token = await fetchToken(code);
+        localStorage.setItem('user-token', token);
+        commit('TOKEN_READ_SUCCESS', token);
     } catch (err) {
         commit('API_ERROR', err);
     }

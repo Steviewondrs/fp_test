@@ -4,7 +4,8 @@ export const state = {
         employee: {
             name: ''
         }
-    }
+    },
+    token: localStorage.getItem('user-token') || ''
 };
 
 export const mutations = {
@@ -22,5 +23,13 @@ export const mutations = {
 
     API_ERROR (state, error) {
         console.log(error);
+    },
+
+    TOKEN_READ_SUCCESS (state, token) {
+        state.token = token;
     }
+};
+
+export const getters = {
+    isAuthenticated: state => !!state.token
 };
