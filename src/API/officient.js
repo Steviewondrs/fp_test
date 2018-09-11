@@ -19,12 +19,18 @@ export function fetchPersonList (token) {
     const url = '/officient/people/list?page=0';
     return myFetch(url, {
         method: 'GET'
-        // credentials: 'include'
     }, token);
 }
 
 export function fetchPersonDetails (id, token) {
     const url = `/officient/people/${id}/detail`;
+    return myFetch(url, {
+        method: 'GET'
+    }, token);
+}
+
+export function fetchPersonWage (id, token) {
+    const url = `/officient/wages/${id}/current`;
     return myFetch(url, {
         method: 'GET'
     }, token);

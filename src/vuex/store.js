@@ -1,20 +1,18 @@
 export const state = {
+    token: localStorage.getItem('user-token') || '',
     personsList: [],
-    selectedPerson: {
-        employee: {
-            name: ''
-        }
-    },
-    token: localStorage.getItem('user-token') || ''
+    selectedPerson: {},
+    wage: {},
+    stations: []
 };
 
 export const mutations = {
-    PERSON_LIST_READ_SUCCESS (state, result) {
-        state.personsList = result.data;
+    PERSON_LIST_READ_SUCCESS (state, list) {
+        state.personsList = list;
     },
 
-    PERSON_DETAILS_READ_SUCCESS (state, result) {
-        state.selectedPerson = result.data;
+    PERSON_DETAILS_READ_SUCCESS (state, details) {
+        state.selectedPerson = details;
     },
 
     PERSON_ITINERARY_READ_SUCCESS (state, result) {
@@ -23,10 +21,19 @@ export const mutations = {
 
     API_ERROR (state, error) {
         console.log(error);
+        // state.loading = false;
     },
 
     TOKEN_READ_SUCCESS (state, token) {
         state.token = token;
+    },
+
+    PERSON_WAGE_READ_SUCCESS (state, wage) {
+        state.wage = wage;
+    },
+
+    STATIONS_READ_SUCCESS (state, stations) {
+        state.stations = stations;
     }
 };
 
