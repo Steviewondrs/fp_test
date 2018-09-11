@@ -20,14 +20,16 @@ export function fetchToken (code) {
 export function fetchPersonList (token) {
     const url = '/officient/people/list?page=0';
     return myFetch(url, {
-        method: 'GET',
-        credentials: 'include'
+        method: 'GET'
+        // credentials: 'include'
     }, token);
 }
 
-export function fetchPersonDetails (id) {
-    let data = mockDB.getPersonDetail(id);
-    return mockCall(data);
+export function fetchPersonDetails (id, token) {
+    const url = `/officient/people/${id}/detail`;
+    return myFetch(url, {
+        method: 'GET'
+    }, token);
 }
 
 export function fetchPersonItinerary (person) {

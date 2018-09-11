@@ -15,9 +15,10 @@ export const readPersonsList = async ({ commit, state }) => {
     }
 };
 
-export const readPersonDetails = async ({ commit, dispatch }, id) => {
+export const readPersonDetails = async ({ commit, dispatch, state }, id) => {
     try {
-        const details = await fetchPersonDetails(id);
+        const token = state.token;
+        const details = await fetchPersonDetails(id, token);
         await dispatch('readPersonItinerary', details);
         commit('PERSON_DETAILS_READ_SUCCESS', details);
     } catch (err) {

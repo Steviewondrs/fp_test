@@ -1,6 +1,6 @@
 <template lang="pug">
     .container(v-if="person")
-        h1 {{ person.employee.name }}
+        h1 {{ person.name }}
         .box
             .box__header
                 h3 Personal information
@@ -8,22 +8,25 @@
                 .grid.grid--col-three
                     .grid-item
                         h4.title Birthdate
-                        .content {{ person.employee.dob }}
+                        .content {{ person.birthdate }}
                     .grid-item
                         h4.title Nationality
-                        .content {{ person.employee.nationality_country_code }}
+                        .content {{ person.nationality_country_code }}
                     .grid-item
-                        h4.title Birthplace
-                        .content {{ person.employee.place_of_birth }}
+                        h4.title Address
+                        .content 
+                            div {{ person.address.line_1 }}
+                            div {{ person.address.line_2 }}
+                            div {{ person.address.zipcode }} {{ person.address.city }}
                     .grid-item
                         h4.title Gender
-                        .content {{ person.employee.gender }}
+                        .content {{ person.gender }}
                     .grid-item
                         h4.title Marital status
-                        .content {{ person.employee.civil_state }}
+                        .content {{ person.civil_state }}
                     .grid-item
                         h4.title email
-                        .content {{ person.employee.email }}
+                        .content {{ person.email }}
 
 </template>
 

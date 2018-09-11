@@ -14,7 +14,7 @@ export const mutations = {
     },
 
     PERSON_DETAILS_READ_SUCCESS (state, result) {
-        state.selectedPerson = result;
+        state.selectedPerson = result.data;
     },
 
     PERSON_ITINERARY_READ_SUCCESS (state, result) {
