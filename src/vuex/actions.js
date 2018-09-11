@@ -26,10 +26,20 @@ export const readPersonDetails = async ({ commit, dispatch, state }, id) => {
     }
 };
 
-export const readPersonItinerary = async ({ commit }, person) => {
+export const readPersonItinerary = async ({ commit, dispatch }, person) => {
     try {
+        await 
         const itinerary = await fetchPersonItinerary(person);
         commit('PERSON_ITINERARY_READ_SUCCESS', itinerary);
+    } catch (err) {
+        commit('API_ERROR', err);
+    }
+};
+
+export const readStation = async ({ commit }) => {
+    try {
+        const stations = await fetchStations();
+        commit('STATIONS_READ_SUCCESS', stations);
     } catch (err) {
         commit('API_ERROR', err);
     }
