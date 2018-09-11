@@ -1,7 +1,7 @@
 <template lang="pug">
-    .container
-        router-link.link(to="/")
-            h4 Back to Persons
+    div
+        .detail-link-container
+            router-link.button.btn-detail(to="/") Back to Persons
         PersonalInfo
         Itinerary
 </template>
