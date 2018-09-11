@@ -201,7 +201,7 @@ button,
 
 .planner-list-item {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
 	
 	& + & {
@@ -209,14 +209,26 @@ button,
 		padding-top: 15px;
 		margin-top: 15px;
 	}
+
+	@media (min-width: $media--min-md) {
+		flex-direction: row;
+	}
 }
 
 .planner-item {
 	display: flex;
 	flex-direction: column;
 	
+
 	& + & {
-		margin-left: 40px;
+		margin-top: 15px;
+	}
+
+	@media (min-width: $media--min-md) {
+		& + & {
+			margin-top: 0;
+			margin-left: 40px
+		}
 	}
 }
 
@@ -229,6 +241,10 @@ button,
 
 .planner-item__timeline {
 	margin-bottom: 10px;
+
+	span.to {
+		text-align: right;
+	}
 }
 
 .planner-item__details {
@@ -240,8 +256,10 @@ button,
 .planner-timeline-bar {
 	display: block;
 	position: relative;
-	width: 100px;
+	min-width: 100px;
+	max-width: 350px;
 	margin: 0 10px;
+	flex: 1;
 	
 	&:before {
 		position: absolute;
@@ -291,6 +309,8 @@ button,
 		
 		color: white;
 	}
+
+	
 }
 
 .hide--md {

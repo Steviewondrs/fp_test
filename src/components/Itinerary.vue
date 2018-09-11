@@ -10,19 +10,19 @@
                             h4 Mon
                         .planner-item
                             .planner-item__timeline
-                                span 07.00
+                                span.from 07.00
                                 .planner-timeline-bar.train
                                     span IC1234
-                                span 08.30 (1h30min)
+                                span.to 08.30 (1h30min)
                             .planner-item__details
                                 span Gent
                                 span Kortrijk
                         .planner-item
                             .planner-item__timeline
-                                span 17.30
+                                span.from 17.30
                                 .planner-timeline-bar.train
                                     span IC1234
-                                span 19.00 (1h30min)
+                                span.to 19.00 (1h30min)
                             .planner-item__details
                                 span Kortrijk
                                 span Gent
