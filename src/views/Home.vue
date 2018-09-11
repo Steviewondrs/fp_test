@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex';
 import Login from '@/components/Login';
 import PersonsList from '@/components/PersonsList';
 

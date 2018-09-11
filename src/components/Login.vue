@@ -15,7 +15,6 @@ export default {
     name: 'login',
     methods: {
         login () {
-            const path = window.location.href;
             const href = 'https://app.officient.io/authorize?client_id=504616&state=xyz';
             window.location.href = href;
         },

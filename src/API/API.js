@@ -1,4 +1,4 @@
-export async function myFetch(url, params, token) {
+export async function myFetch (url, params, token) {
     if (token) {
         if (!params.headers) {
             params.headers = {};
@@ -12,6 +12,5 @@ export async function myFetch(url, params, token) {
         return data;
     } catch (error) {
         throw new Error(error);
-        console.log(error);
     }
 }

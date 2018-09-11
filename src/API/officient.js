@@ -1,4 +1,4 @@
-import querystring from 'querystring';
+// import querystring from 'querystring';
 import * as mockDB from './mockDB';
 import { myFetch } from './API';
 
@@ -43,11 +43,11 @@ function mockCall (data) {
     });
 }
 
-function formatDate (date) {
-    var year = '' + date.getFullYear();
-    year = year.substring(2, 4);
-    var day = '' + date.getDate();
-    var month = '' + date.getMonth();
+// function formatDate (date) {
+//     var year = '' + date.getFullYear();
+//     year = year.substring(2, 4);
+//     var day = '' + date.getDate();
+//     var month = '' + date.getMonth();
 
-    return day + month + year;
-}
+//     return day + month + year;
+// }
