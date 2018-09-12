@@ -25,7 +25,7 @@ export function fetchRoute (from, to, date, hour, timesel) {
     });
 }
 
-function timeout(ms) {
+function timeout (ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
@@ -43,11 +43,11 @@ export async function fetchItinerary (from, to, weeklyTimeEngagementMinutes) {
         let hour = '0900';
 
         if (minutes > 0) {
-            const result = await fetchRoute(from, to, formattedDate, hour, 'arrival');
+            const result = await fetchRoute(from, to, formattedDate, hour, 'departure');
             await timeout(334);
             fromCalls[i] = {
                 date,
-                result
+                connection: result.connection[0]
             };
         } else {
             fromCalls[i] = {date};
@@ -62,14 +62,14 @@ export async function fetchItinerary (from, to, weeklyTimeEngagementMinutes) {
         let formattedDate = formatDate(date);
         // hours
         let minutes = timesInMinutes[date.getDay()];
-        let hour = 9 + Math.ceil(minutes/60) + '00';
+        let hour = 9 + Math.ceil(minutes / 60) + '00';
 
         if (minutes > 0) {
-            const result = await fetchRoute(to, from, formattedDate, hour, 'departure');
+            const result = await fetchRoute(to, from, formattedDate, hour, 'arrival');
             await timeout(334);
             toCalls[i] = {
                 date,
-                result
+                connection: result.connection[0]
             };
         } else {
             toCalls[i] = {date};
@@ -82,9 +82,7 @@ export async function fetchItinerary (from, to, weeklyTimeEngagementMinutes) {
             morning: fromCalls[i],
             evening: toCalls[i]
         };
-        if (resultSet[i].morning) {
-            resultSet[i].date = resultSet[i].morning.date;
-        }
+        resultSet[i].date = resultSet[i].morning.date;
     }
     return resultSet;
 }

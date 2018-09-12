@@ -16,7 +16,7 @@ export const mutations = {
     },
 
     PERSON_ITINERARY_READ_SUCCESS (state, result) {
-        state.itinerary = result; // TODO:
+        state.itinerary = result;
     },
 
     API_ERROR (state, error) {
