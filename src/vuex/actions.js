@@ -33,7 +33,7 @@ export const readPersonDetails = async ({ commit, dispatch, state }, id) => {
     try {
         const token = state.token;
         const details = await fetchPersonDetails(id, token);
-        dispatch('readPersonItinerary', details.data);
+        await dispatch('readPersonItinerary', details.data);
         commit('PERSON_DETAILS_READ_SUCCESS', details.data);
     } catch (err) {
         commit('API_ERROR', err);
@@ -77,6 +77,11 @@ export const readStations = async ({ commit }) => {
     } catch (err) {
         commit('API_ERROR', err);
     }
+};
+
+export const logout = ({ commit }) => {
+    commit('LOGOUT');
+    localStorage.removeItem('user-token');
 };
 
 function findStation (stations, city) {

@@ -3,6 +3,8 @@
         div(v-if="!isAuthenticated")
             Login
         div(v-if="isAuthenticated")
+            .detail-link-container
+                button(v-on:click="logout") Log out
             PersonsList
 </template>
 
@@ -16,6 +18,11 @@ export default {
         ...mapGetters(['isAuthenticated'])
     },
     name: 'home',
+    methods: {
+        logout () {
+            this.$store.dispatch('logout');
+        }
+    },
     components: {
         Login,
         PersonsList

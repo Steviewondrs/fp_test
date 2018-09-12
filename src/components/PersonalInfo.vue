@@ -5,7 +5,7 @@
             .box__header
                 h3 Personal information
             .box__content
-                .grid.grid--col-three
+                .grid.grid--col-three(v-if="person")
                     .grid-item
                         h4.title Birthdate
                         .content {{ person.birthdate }}
@@ -14,7 +14,7 @@
                         .content {{ person.nationality_country_code }}
                     .grid-item
                         h4.title Address
-                        .content 
+                        .content
                             div {{ person.address.line_1 }}
                             div {{ person.address.line_2 }}
                             div {{ person.address.zipcode }} {{ person.address.city }}

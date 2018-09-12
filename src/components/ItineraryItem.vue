@@ -27,9 +27,6 @@
 <script>
 export default {
     props: ['item'],
-    mounted () {
-        console.log(this.$props.item)
-    },
     methods: {
         formatDay (date) {
             const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -44,7 +41,7 @@ export default {
             return hh + ':' + mm;
         },
         formatDuration (secs) {
-            var hh = Math.floor(secs/60/60);
+            var hh = Math.floor(secs / 60 / 60);
             var mm = secs % 60;
             // debugger
             hh = hh < 10 ? '0' + hh : hh;

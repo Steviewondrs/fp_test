@@ -1,7 +1,7 @@
 export const state = {
     token: localStorage.getItem('user-token') || '',
     personsList: [],
-    selectedPerson: {},
+    selectedPerson: undefined,
     wage: {},
     stations: []
 };
@@ -34,6 +34,10 @@ export const mutations = {
 
     STATIONS_READ_SUCCESS (state, stations) {
         state.stations = stations;
+    },
+
+    LOGOUT (state) {
+        state.token = '';
     }
 };
 
